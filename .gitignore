@@ -1,5 +1,14 @@
+.DS_Store
+*.1tf
+*.txt
+
+# Developer directories
+**/secrets
+**/totvs
+**/scripts
+
 # Local .terraform directories
-**/.terraform/*
+**/.terraform
 
 # .tfstate files
 *.tfstate
@@ -26,4 +35,4 @@ override.tf.json
 # !example_override.tf
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-# example: *tfplan*
+*tfplan*
