@@ -1,12 +1,3 @@
-variable "database_flags" {
-  description = "The database flags for the master instance. See [more details](https://cloud.google.com/sql/docs/postgres/flags)"
-  type = list(object({
-    name  = string
-    value = string
-  }))
-  default = []
-}
-
 variable secretfile {
   type        = string
   default     = "teste-de-carga-do-protheus-930b2dbd0159.json"
@@ -20,7 +11,7 @@ variable prefix {
 
 variable instances {
     type    = number
-    default = 3
+    default = 1
 }
 
 variable instance_type {
@@ -70,3 +61,12 @@ variable matriz_disk_data_size {
     default = 200
     description = "matriz size of data disk"
 }
+
+# variable "database_flags" {
+#   description = "The database flags for the master instance. See [more details](https://cloud.google.com/sql/docs/postgres/flags)"
+#   type = list(object({
+#     name  = string
+#     value = string
+#   }))
+#   default = []
+# }

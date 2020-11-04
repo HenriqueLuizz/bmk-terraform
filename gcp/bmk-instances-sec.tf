@@ -5,6 +5,8 @@ resource "google_compute_instance" "secondary" {
     zone = var.zone
     allow_stopping_for_update = true
 
+    depends_on = [ google_compute_instance.primary ]
+
     boot_disk {
         initialize_params {
             image = var.image_disk

@@ -12,3 +12,10 @@ provider "google" {
   credentials = file("${path.module}/secrets/${var.secretfile}")
   region      = "us-central1"
 }
+
+# provider "google-beta" {
+#   project     = "teste-de-carga-do-protheus"
+#   credentials = file("${path.module}/secrets/${var.secretfile}")
+#   region      = "us-central1"
+#   version = "~> 3.5"
+# }

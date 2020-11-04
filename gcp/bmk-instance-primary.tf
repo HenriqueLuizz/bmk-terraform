@@ -2,9 +2,9 @@ resource "google_compute_instance" "primary" {
     name = "${var.prefix}-primary0"
     machine_type = var.instance_type
     zone = var.zone
-    
-    # deletion_protection = true
     allow_stopping_for_update = true
+    
+    deletion_protection = true
 
     # depends_on = [ google_sql_database.database ]
 
