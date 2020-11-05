@@ -8,6 +8,7 @@ resource "google_compute_instance" "secondary" {
     depends_on = [ google_compute_instance.primary ]
 
     boot_disk {
+        auto_delete = true
         initialize_params {
             image = var.image_disk
             size = var.disk_os_size

@@ -9,6 +9,7 @@ resource "google_compute_instance" "primary" {
     # depends_on = [ google_sql_database.database ]
 
     boot_disk {
+        auto_delete = false
         initialize_params {
             image = var.image_disk
             size = var.disk_os_size
@@ -40,4 +41,10 @@ resource "google_compute_instance" "primary" {
     service_account {
         scopes = ["storage-full","https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/source.full_control"]
     }
+}
+
+
+resource "google_compute_project_metadata_item" "default" {
+  key   = "teste"
+  value = "valor_#_teste"
 }
