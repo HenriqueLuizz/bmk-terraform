@@ -5,7 +5,7 @@
 # Developer directories
 **/secrets
 **/totvs
-**/scripts
+# **/scripts
 
 # Local .terraform directories
 **/.terraform
