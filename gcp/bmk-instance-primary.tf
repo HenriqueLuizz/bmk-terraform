@@ -44,7 +44,7 @@ resource "google_compute_instance" "primary" {
 }
 
 
-resource "google_compute_project_metadata_item" "default" {
-  key   = "teste"
-  value = "valor_#_teste"
-}
+# resource "google_compute_project_metadata_item" "default" {
+#   key   = "teste"
+#   value = "valor_#_teste"
+# }
