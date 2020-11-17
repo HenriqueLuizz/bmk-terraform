@@ -72,6 +72,9 @@ $rule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule 
 $acl.SetAccessRule($rule)
 $acl | Set-Acl -Path 'D:'
 
+# Adiciona o usuario HANDSON no Logon As Service
+D:\arte\scripts\AddLogonAsService.ps1 handson
+del D:\arte\scripts\AddLogonAsService.ps1
+
 cd D:\totvs\tec\appserver-broker
 start  .\appserver.exe -BALANCE_SMART_CLIENT_DESKTOP -i
-
