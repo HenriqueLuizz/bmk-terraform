@@ -30,10 +30,18 @@ resource "google_compute_instance" "secondary" {
     }
 
     metadata = {
-        windows-startup-script-url = "gs://bmkprotheus/bmksecondarystartup.ps1"
+        windows-startup-script-url = "gs://bmkprotheus/scripts/bmksecondarystartup.ps1"
     }
 
     service_account {
-        scopes = ["storage-full","https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/source.full_control"]
+        scopes = [
+            "storage-full",
+            "https://www.googleapis.com/auth/compute",
+            "https://www.googleapis.com/auth/source.full_control",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "cloud-platform",
+            "monitoring",
+            "logging-write"
+            ]
     }
 }
