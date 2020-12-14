@@ -1,6 +1,6 @@
 variable resource_group {
   type        = string
-  default     = "bmkprotheus01"
+  default     = "rm-terraform"
   description = "bmkprotheus01"
 }
 

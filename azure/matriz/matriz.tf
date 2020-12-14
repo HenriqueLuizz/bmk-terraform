@@ -1,3 +1,9 @@
+resource "azurerm_proximity_placement_group" "protheus_proximity_placement_group" {
+  name                = "ProtheusProximityPlacementGroup"
+  location            = var.resource_location
+  resource_group_name = var.resource_group
+}
+
 resource "azurerm_virtual_machine" "bmk_protheus_win_matriz" {
     name                            = "${var.prefix}-matriz"
     location                        = var.resource_location
@@ -10,9 +16,7 @@ resource "azurerm_virtual_machine" "bmk_protheus_win_matriz" {
     delete_os_disk_on_termination   = true
     delete_data_disks_on_termination = true
     
-    #Todo: Proximit Placement Group  
-    # proximity_placement_group_id    = azurerm_proximity_placement_group.bmk_protheus_ppg.id
-    proximity_placement_group_id    = "/subscriptions/a698f16f-8773-40f5-a611-30eafb3d671c/resourceGroups/bmkprotheus/providers/Microsoft.Compute/proximityPlacementGroups/bmkprotheus"
+    proximity_placement_group_id    = azurerm_proximity_placement_group.protheus_proximity_placement_group.id
     
     #Uses images from existing Protheus Enviroment
     #TodoV2: Implement Script to create machine - Add Image
