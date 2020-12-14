@@ -45,6 +45,7 @@ resource "azurerm_network_interface" "bkm_protheus_nic" {
     
     ip_configuration {
         name                            = "matrizconfig1"
+        #Todo: Change Subnet_id -
         subnet_id                       = "/subscriptions/a698f16f-8773-40f5-a611-30eafb3d671c/resourceGroups/bmkprotheus/providers/Microsoft.Network/virtualNetworks/bmkprotheus-vnet/subnets/default"
         public_ip_address_id            = azurerm_public_ip.bmk_protheus_pip.id
         private_ip_address_allocation   = "Static"
@@ -59,6 +60,7 @@ resource "azurerm_network_security_group" "bmk_protheus_sg" {
     location                = var.resource_location
     resource_group_name     = var.resource_name
 
+    #Todo: Add Defaults Rules
     security_rule {
         name                        = "allowAllPorts"
         priority                    = 100
