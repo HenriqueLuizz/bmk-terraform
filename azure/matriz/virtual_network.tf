@@ -1,27 +1,16 @@
-# resource "azurerm_proximity_placement_group" "bmk_protheus_ppg" {
-#     name                    = "bmkProximityPlacementGroup"
-#     location                = var.resource_location
-#     resource_group_name     = var.resource_name
+resource "azurerm_virtual_network" "protheus_vnet" {
+    name                    = var.vnet_name
+    address_space           = var.vnet_address_space
+    location                = var.resource_location
+    resource_group_name     = var.resource_name
+}
 
-#     tags = {
-#         environment = "Production"
-#     }
-# }
-
-# resource "azurerm_virtual_network" "bmk_protheus_vn" {
-#     name                    = "bmk-network"
-#     address_space           = ["10.0.0.0/16"]
-#     location                = var.resource_location
-#     resource_group_name     = var.resource_name
-# }
-
-# resource "azurerm_subnet" "bmk_protheus_subnet" {
-#     name                    = "internal"
-#     resource_group_name     = var.resource_name
-#     # virtual_network_name    = azurerm_virtual_network.bmk_protheus_vn.name
-#     virtual_network_name    = "bmkprotheus-vnet"
-#     address_prefix          = "10.0.1.0/24"
-# }
+resource "azurerm_subnet" "protheus_subnet" {
+    name                    = "internal"
+    resource_group_name     = var.resource_name
+    virtual_network_name    = azurerm_virtual_network.protheus_vnet.name
+    address_prefix          = var.subnet_address_space
+}
 
 resource "azurerm_public_ip" "bmk_protheus_pip" {
     name                    = "${var.prefix}MATRIZ-PIP"

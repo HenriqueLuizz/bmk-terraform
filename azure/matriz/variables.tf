@@ -6,8 +6,8 @@ variable resource_group {
 
 variable resource_name {
   type        = string
-  default     = "bmkprotheus"
-  description = "bmkprotheus"
+  default     = "rm-terraform"
+  description = "rm-terraform"
 }
 
 variable resource_location {
@@ -32,4 +32,22 @@ variable vm_name {
   type        = string
   default     = "BMKPROTHEUS"
   description = "BMKPROTHEUS"
+}
+
+variable vnet_name {
+  type        = string
+  default     = "bmk-network"
+  description = "BMKPROTHEUS"
+}
+
+variable vnet_address_space {
+  type = list(string)
+  default     = ["10.0.0.0/16"] 
+  description = "List of Address Spaces"
+}
+
+variable subnet_address_space {
+  type        = string
+  default     = "10.0.1.0/24"
+  description = "location"
 }
