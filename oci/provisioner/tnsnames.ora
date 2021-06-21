@@ -1,0 +1,16 @@
+
+#HANDSONSYS =
+#(DESCRIPTION=
+#        (CONNECT_TIMEOUT=5)
+#        (TRANSPORT_CONNECT_TIMEOUT=3)
+#        (RETRY_COUNT=3)
+#        (ADDRESS_LIST=(LOAD_BALANCE=on)
+#        (ADDRESS=(PROTOCOL=TCP)(HOST=10.0.4.5)(PORT=1521))
+#	)
+#        (CONNECT_DATA=
+#        (SERVICE_NAME=DBBMKXK_iad18h.subnpublica.vcnprotheus.oraclevcn.com)
+#)
+#)
+HANDSONSYS = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = bmdbbmkxk)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = DBBMKXK_iad18h.subnpublica.vcnprotheus.oraclevcn.com) ))
+
+HANDSONLOG = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = bmdbbmkxk)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = DBBMKXK_iad18h.subnpublica.vcnprotheus.oraclevcn.com) ))
